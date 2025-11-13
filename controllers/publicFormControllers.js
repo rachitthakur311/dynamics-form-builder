@@ -1,5 +1,5 @@
-const Form = require("../models/formSchema");
-const Field = require("../models/formInformationSchema");
+const Form = require("../models/formTitleSchema");
+const Field = require("../models/formInfoSchema");
 
 const listFormsPublic = async (req, res) => {
   try {

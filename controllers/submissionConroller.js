@@ -6,6 +6,7 @@ const submitForm = async (req, res) => {
   try {
     const { formId } = req.params;
     const { answers } = req.body;
+     const files = req.files || [];
 
     const form = await Form.findById(formId);
     if (!form || form.isArchive) {
@@ -119,16 +120,13 @@ const submitForm = async (req, res) => {
   }
 };
 
-
 const listSubmissions = async (req, res) => {
   try {
     const { formId } = req.params;
-    const { page = 1, limit = 10 } = req.query; // optional pagination
+    const { page = 1, limit = 10 } = req.query; 
     const skip = (page - 1) * limit;
-
-    // Fetch submissions for the given formId
     const submissions = await Submission.find({ formId })
-      .sort({ createdAt: -1 })  // newest first
+      .sort({ createdAt: -1 }) 
       .skip(Number(skip))
       .limit(Number(limit));
 

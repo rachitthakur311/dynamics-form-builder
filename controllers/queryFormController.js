@@ -239,7 +239,7 @@ const getFieldsByFormId = async (req, res) => {
 
 const updateForm = async (req, res) => {
   try {
-    const { formId } = req.params;
+    const { formId } = req.query;
     const { title, description, isArchive } = req.body;
 
     const updatedForm = await Form.findByIdAndUpdate(

@@ -9,12 +9,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const formTitleRoutes = require("./routes/formTitleRoutes");
-const submissionRoutes = require("./routes/submissionRoutes")
+const submissionRoutes = require("./routes/submissionRoutes");
+const publicRoutes = require("./routes/publicRoutes");
 
 
 
 app.use('/api/auth',formTitleRoutes);
-app.use('/api/auth', submissionRoutes)
+app.use('/api/auth', submissionRoutes);
+app.use('/api/auth', publicRoutes);
 
 
 const connectDB = async () => {
