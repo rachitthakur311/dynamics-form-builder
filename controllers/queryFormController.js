@@ -2,7 +2,6 @@ const Form = require('../models/formTitleSchema');
 const Field = require('../models/formInfoSchema');
 const Submission = require('../models/submissionSchema')
 const { Types } = require('mongoose');
-const { options } = require('../routes/formTitleRoutes');
 
 const createForm = async function (req, res) {
   try {
