@@ -1486,21 +1486,18 @@ export default App;
 ## Error Handling Best Practices
 
 ```javascript
-// Create a utility function for error handling
 const handleApiError = (error, result) => {
   if (!result.status) {
     if (result.errors) {
-      // Validation errors
       return result.errors;
     } else {
-      // General error
       alert(result.message || 'An error occurred');
     }
   }
   return null;
 };
 
-// Usage
+// Usage------------->
 const result = await submitForm(formId, formData);
 const errors = handleApiError(null, result);
 if (errors) {
