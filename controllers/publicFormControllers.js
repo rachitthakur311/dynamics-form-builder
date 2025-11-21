@@ -41,7 +41,7 @@ const getFormDefinition = async (req, res) => {
     console.log("Get Form Definition Error:", error);
     return res.status(500).json({
       status: false,
-      message: "Internal server error"
+      message:"Internal server error"
     });
   }
 };
